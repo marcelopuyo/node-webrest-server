@@ -5,7 +5,7 @@ export class CreateTodoDto {
 
   static create(props: {[key: string]: any}) : [string?, CreateTodoDto?] {2
     const { text } = props;
-    if (!text) return ['Propiedad texto requerida', undefined];
+    if (!text || text.length === 0) return ['Propiedad texto requerida', undefined];
     return [undefined, new CreateTodoDto(text)];
   };
 };
